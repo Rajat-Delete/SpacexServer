@@ -1,6 +1,12 @@
+var backend_Url = 'http://localhost:8000/api/v1';
+
 async function httpGetPlanets() {
   // TODO: Once API is ready.
   // Load planets and return as JSON.
+  const response = await fetch(`${backend_Url}/planets`);
+  console.log('response',response);
+  return await response.json();
+
 }
 
 async function httpGetLaunches() {
