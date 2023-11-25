@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const {ServerConfig} = require('./config');
 const app = express();
 const cors = require('cors');
@@ -13,6 +14,15 @@ const apiroutes = require('./routes')
 
 app.use('/api',apiroutes);
 
+//server the react data inside public from server end
+app.use(express.static(path.join(__dirname,"..","public")));
+
+
+//serving the Index.html from '/'
+app.use('/',(request,response)=>{
+    console.log('Loading main page');
+    response.sendFile(path.join(__dirname,'..','public','index.html'));
+})
 
 async function startServer(){
     await loadPlanetsData();
