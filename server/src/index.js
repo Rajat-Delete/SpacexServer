@@ -13,7 +13,7 @@ app.use(cors({
 }))
 
 //logging the Incoming request with morgan
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 
 const apiroutes = require('./routes')
 
