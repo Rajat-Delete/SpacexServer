@@ -8,10 +8,10 @@ function getAllLaunches(request,response){
 
 function httpaddNewLaunch(request,response){
     const launch = request.body;
-    console.log('launch is',launch);
     launch.launchDate = new Date(launch.launchDate);
 
     addNewLaunch(launch);
+    console.log('launch is',launch);
     return response.status(201).json(launch);
 
 }

@@ -1,7 +1,8 @@
 
 
 function validateRequest(request,response,next){
-    if(!request.body.mission || !request.body.rocketType || !request.body.launchDate || !request.body.destination){
+    console.log('Inside Validate Request')
+    if(!request.body.mission || !request.body.rocket || !request.body.launchDate || !request.body.target){
         return response.status(400).json({
             'Message' : 'Mission Requeest Attributes in Launch'
         })
