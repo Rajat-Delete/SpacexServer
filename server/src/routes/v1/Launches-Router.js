@@ -1,6 +1,7 @@
 const express = require('express');
 const router =  express.Router();
 const { LaunchesController } = require('../../controller');
+const {launchesMiddleware} =  require('../../middleware');
 console.log('Inside launches router');
 
 //console.log('LaunchesController is',LaunchesController);
@@ -8,7 +9,7 @@ console.log('Inside launches router');
 router.get('/', LaunchesController.getAllLaunches);
 
 //this is reffering to /api/v1/launches which is a post request
-router.post('/',LaunchesController.httpaddNewLaunch);
+router.post('/',launchesMiddleware.validateRequest,LaunchesController.httpaddNewLaunch);
 
 
 
