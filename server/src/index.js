@@ -3,6 +3,7 @@ const path = require('path');
 const {ServerConfig} = require('./config');
 const app = express();
 const cors = require('cors');
+const morgan = require('morgan');
 app.use(express.json());
 
 const { loadPlanetsData } = require('./models/planets')
@@ -10,6 +11,10 @@ const { loadPlanetsData } = require('./models/planets')
 app.use(cors({
     origin : 'http://localhost:3000',
 }))
+
+//logging the Incoming request with morgan
+app.use(morgan('combined'));
+
 const apiroutes = require('./routes')
 
 app.use('/api',apiroutes);
