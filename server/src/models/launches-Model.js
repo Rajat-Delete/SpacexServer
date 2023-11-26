@@ -29,7 +29,23 @@ function addNewLaunch(planet){
     )
 }
 
+function launchExists(id){
+    return launches.has(id);
+}
+
+
+function abortLaunchbyId(id){
+    //so instead of deleting the data here we woulld mark the launch properties to false
+    const launch = launches.get(id);
+    launch.success = false;
+    launch.upcoming = false;
+    return launch;
+}
+
+
 module.exports = {
     launches,
     addNewLaunch,
+    launchExists,
+    abortLaunchbyId,
 }
