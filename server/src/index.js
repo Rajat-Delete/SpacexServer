@@ -32,9 +32,11 @@ app.use('/',(request,response)=>{
 async function startServer(){
     await loadPlanetsData();
     app.listen(ServerConfig.PORT,(req,res)=>{
-        console.log(`Backend App is running on ${ServerConfig.PORT}`);
-        console.log('request object is ',req);
+        //console.log(`Backend App is running on ${ServerConfig.PORT}`);
+        //console.log('request object is ',req);
     });
 }
 
 startServer();
+
+module.exports = app;

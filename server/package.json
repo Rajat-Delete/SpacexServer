@@ -4,7 +4,8 @@
   "description": "A basic bolierplate for NodeJs",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon src/index.js"
+    "dev": "npx nodemon src/index.js",
+    "test": "jest"
   },
   "author": "Rajat",
   "license": "ISC",
@@ -21,5 +22,9 @@
     "sequelize-cli": "^6.6.0",
     "winston": "^3.8.2"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
 }
