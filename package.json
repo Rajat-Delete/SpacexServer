@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client" : "npm start --prefix client",
-    "server" : "npm run dev --prefix server", 
-    "app" : "npm run client & npm run server",
+    "client": "npm start --prefix client",
+    "server": "npm run dev --prefix server",
+    "app": "npm run client & npm run server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npm run build --prefix client && npm run server"
+    "deploy": "npm run build --prefix client && npm run server",
+    "deploy-cluster" : "npm run build --prefix client && npm run cluster --prefix server"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "^5.3.0"
+  }
 }
